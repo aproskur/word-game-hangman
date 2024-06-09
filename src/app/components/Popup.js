@@ -60,7 +60,7 @@ background-clip: text;
 color: transparent;
 text-align: center;
 position: absolute;
-top: -40px;
+top: -55px;
 left: 50%;
 transform: translateX(-50%);
 width: 100%;
