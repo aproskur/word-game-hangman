@@ -82,10 +82,6 @@ export default function WordGame() {
         setIsPopupVisible(true);
     };
 
-    console.log("Popup mode", popupMode);
-    console.log("wordToPlay:", wordToPlay);
-    console.log("guessedLetters:", guessedLetters);
-
     if (!wordToPlay) {
         console.error('WordGameContext not available or wordToPlay is undefined.');
         return <div>Unable to load the game. Please try reloading.</div>;

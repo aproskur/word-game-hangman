@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
+import StyledComponentsRegistry from './lib/registry'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${wordGameFont.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><StyledComponentsRegistry>{children}</StyledComponentsRegistry></body>
     </html>
   );
 }

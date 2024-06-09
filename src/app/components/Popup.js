@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useWordGame } from '@/app/contexts/WordGameContext';
-import GameTitle from '../components/GameTitle';
 
 const Overlay = styled.div`
   position: fixed;
@@ -61,7 +60,7 @@ background-clip: text;
 color: transparent;
 text-align: center;
 position: absolute;
-top: -55px;
+top: -40px;
 left: 50%;
 transform: translateX(-50%);
 width: 100%;
@@ -120,7 +119,6 @@ const TransparentOverlay = styled.div`
   height: 100%;
   background-color: rgba(var(--dark-navy), 0.4);
   z-index: 1
-  pointer-events: none;
 
 `;
 
@@ -537,33 +535,6 @@ const MainGameTitle = () => (
 function Popup({ isVisible, onClose, mode, handleMode }) {
 
   const { startGame, resetGame } = useWordGame();
-  const [isRendered, setIsRendered] = useState(false);
-  const [buttonsVisible, setButtonsVisible] = useState(false);
-
-  useEffect(() => {
-    if (isVisible) {
-      // Set buttonsVisible to true after a short delay 
-      const timer = setTimeout(() => {
-        setButtonsVisible(true);
-      }, 100);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (isVisible) {
-      setIsRendered(true);
-    }
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (isRendered) {
-      const timer = setTimeout(() => setIsRendered(false), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isRendered]);
-
 
 
   const onRoundButtonClick = () => {
@@ -662,14 +633,14 @@ function Popup({ isVisible, onClose, mode, handleMode }) {
           ) : (
             <>
               {/* Exclude PlayButton in win, lost, pause, and category modes */}
-              {mode !== 'win' && mode !== 'lost' && mode !== 'pause' && mode !== 'category' && buttonsVisible && (
+              {mode !== 'win' && mode !== 'lost' && mode !== 'pause' && mode !== 'category' && (
                 <div>
                   <PlayButton key="start-game" onClick={() => handleMode('category')}>{svg}</PlayButton>
                 </div>
               )}
 
               {/*Exclude all buttons if in "category" mode*/}
-              {mode !== 'category' && buttonsVisible && buttons.map((button, index) => (
+              {mode !== 'category' && buttons.map((button, index) => (
                 button.type === 'gradient' ?
                   <GradientButton key={index} onClick={button.onClick}>
                     {button.label}
@@ -685,8 +656,6 @@ function Popup({ isVisible, onClose, mode, handleMode }) {
       </Overlay>
     ) : null
   );
-
-
 }
 
 export default Popup;
