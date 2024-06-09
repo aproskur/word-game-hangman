@@ -79,8 +79,10 @@ export const WordGameProvider = ({ children }) => {
 
             if (wordLetters.every(char => updatedGuessed.has(char))) {
                 setIsGameWon(true);
-                setIsPopupVisible(true);
-                setPopupMode("win");
+                setTimeout(() => {
+                    setPopupMode("win");
+                    setIsPopupVisible(true);
+                }, 2000);
             }
 
             return updatedGuessed;
