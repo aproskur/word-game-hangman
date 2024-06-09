@@ -815,43 +815,43 @@
             },
             {
                 "name": "Sniffer",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Trial Chamber",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Cherry Grove",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Vault",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Ominous bottle",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Woodland mansion",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Wind charge",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Fire aspect",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Orange terracotta",
-                "selected": "false"
+                "selected": false
             },
             {
                 "name": "Minecraft",
-                "selected": "false"
+                "selected": false
             }
         ]
     }
